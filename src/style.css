@@ -111,6 +111,20 @@ body::after {
     }
 }
 
+@media (hover: hover) and (pointer: fine) {
+
+    .nav-link:hover {
+        color: var(--accent-cyan);
+        background-size: 100% 2px;
+    }
+
+    .navbar-brand:hover {
+        color: var(--accent-purple);
+        background-size: 100% 2px;
+    }
+
+}
+
 .floating-nav {
     position: fixed;
     top: 20px;
@@ -140,9 +154,8 @@ body::after {
     background-clip: content-box;
 }
 
-.nav-link:hover {
+.nav-link:active {
     color: var(--accent-cyan);
-    background-size: 100% 2px;
 }
 
 .navbar-brand {
@@ -157,11 +170,6 @@ body::after {
     background-position: 0 calc(100%);
     background-origin: content-box;
     background-clip: content-box;
-}
-
-.navbar-brand:hover {
-    color: var(--accent-purple);
-    background-size: 100% 2px;
 }
 
 .layout {

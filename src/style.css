@@ -57,6 +57,36 @@ body::before {
     }
 }
 
+body::after {
+    content: "";
+    position: fixed;
+    left: -40%;
+    top: 35%;
+    width: 180%;
+    height: 260px;
+    pointer-events: none;
+    z-index: -1;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(168, 85, 247, 0.14) 35%,
+        rgba(34, 211, 238, 0.14) 50%,
+        rgba(168, 85, 247, 0.14) 65%,
+        transparent 100%
+    );
+
+    filter: blur(85px);
+    opacity: 0.9;
+      animation: auroraDrift 18s ease-in-out infinite alternate,
+             auroraHue   12s ease-in-out infinite;
+}
+
+@keyframes auroraHue {
+  0%, 100% { filter: blur(90px) saturate(1.15) hue-rotate(0deg); }
+  50%      { filter: blur(90px) saturate(1.25) hue-rotate(8deg); }
+}
+
 @media (max-width: 767.98px) {
 
     .floating-nav {
@@ -117,11 +147,21 @@ body::before {
 
 .navbar-brand {
     color: var(--text-primary);
-    transition: color 0.25s ease;
+        transition: color 0.25s ease, background-size 0.3s ease;
+
+    background-image: linear-gradient(90deg,
+            rgb(255, 132, 0),
+            var(--accent-purple));
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    background-position: 0 calc(100%);
+    background-origin: content-box;
+    background-clip: content-box;
 }
 
 .navbar-brand:hover {
     color: var(--accent-purple);
+    background-size: 100% 2px;
 }
 
 .layout {
@@ -134,7 +174,6 @@ body::before {
     flex: 1;
     overflow-x: hidden;
     overflow-y: auto;
-    padding-top: 110px;
     scroll-behavior: smooth;
 }
 

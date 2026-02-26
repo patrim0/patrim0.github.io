@@ -1,27 +1,31 @@
-import 'react';
-
 export default function NavBar() {
 
     return (
-        <div>
-            <nav className="navbar m-5 bg-dark rounded-pill bg-opacity-25 px-5">
-                <div className="container-fluid">
-                    <a className="navbar-brand text-light fw-bold" href="#">Patrick Mombleau</a>
-                    <div className="navbar-nav">
-                        <ul className="nav justify-content-end">
-                            <li className="nav-item">
-                                <a className="nav-link active text-light fw-bold" aria-current="page" href="#">/home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link text-light" href="#">/about</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link text-light" href="#">/projects</a>
-                            </li>
-                        </ul>
-                    </div>
+        <nav className="navbar navbar-dark navbar-expand-md rounded-pill px-5 floating-nav">
+            <div className="container-fluid">
+                <a className="navbar-brand fw-bold" href="#home">PM</a>
+
+                <button
+                    className="navbar-toggler border-0 shadow-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarLinks"
+                    aria-controls="navbarLinks"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                <div className="collapse navbar-collapse" id="navbarLinks">
+                    <ul className="navbar-nav ms-auto gap-3">
+                        <li className="nav-item"><a className="nav-link" href="#about">/about</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#projects">/projects</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#technologies">/technologies</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#contact">/contact</a></li>
+                    </ul>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
     );
 }

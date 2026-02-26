@@ -2,15 +2,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import NavBar from './components/NavBar';
 
-
-function App() {
+export default function App() {
 
   return (
     <BrowserRouter>
       <div className="layout">
         <NavBar />
 
-        <main className="content m-5">
+        <main className="content">
           <Routes>
             <Route path='/' element={<Home />}></Route>
           </Routes>
@@ -20,5 +19,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App
